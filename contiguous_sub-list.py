@@ -1,7 +1,10 @@
+import sys
+
 #ls = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
 #ls = [3, -2, 5, -1]
 #ls = [-2, -3, 4, -1, -2, 1, 5, -3]
-ls = [1, -3, 2, 1]
+#ls = [1, -3, 2, 1]
+ls = [-1,-2,-5,-1]
 
 
 # Look for all positive contiguous sub-lists
@@ -36,5 +39,23 @@ print(contiguous(ls))
         
 # Kadane's algorithm
 # O(n) time complexity
+
+
+
+def method2(ls):
+    max_sum = -sys.maxsize
+    current_sum = 0
+
+    for i in range(len(ls)):
+        current_sum += ls[i]
+        if ls[i] > current_sum:
+            current_sum = ls[i]
+        if max_sum < current_sum:
+            max_sum = current_sum
+    
+    return max_sum
+
+print(method2(ls))
+
 
     
