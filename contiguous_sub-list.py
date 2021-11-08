@@ -29,8 +29,8 @@ def contiguous(ls):
     # Add elements to the sublist
     for i in range(start, end+1):
         output.append(ls[i])
-    print("The sum of the maximum contiguous sub-list is " + str(max_sum))
-    return output
+    return str(max_sum)
+    #return output
 
 print(contiguous(ls))
         
